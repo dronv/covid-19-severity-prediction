@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <!-- Make it compatible to mobile devices -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href='../static/style.css'>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <title>COVID-19 Guardian</title>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="/"> Predict-19
+      <img class='covid-img' src="../static/covid-virus.png" /></a>
+    <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> -->
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/reportform">Report-based Form</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</head>
+
+<body>
+
+  <div>
+    <h1 style="margin-top: 10px; margin-left: 100px;">Current COVID-19 Activity</h1>
+  </div>
+  <div class="region_data_summary">
+    <div class="region box">
+      <b>Region:</b>
+      {{data['data'][0]['region']}}
+    </div>
+    <div class="date box">
+      <b>Updated Date:</b>
+      {{data['version']}}
+    </div>
+
+    <div class="cases box">
+      <b>Total Cases:</b>
+      {{data['data'][0]['cases']}}
+    </div>
+
+    <div class="cases_daily box">
+      <b>Total Daily Cases:</b>
+      {{data['data'][0]['cases_daily']}}
+      {% if data['data'][0]['cases_daily'] > data['data'][0]['cases'] %}
+      <span>&#9650;</span>
+    {% elif data['data'][0]['cases_daily'] < data['data'][0]['cases'] %}
+    <span>&#9660;</span>
+    {% else %}
+    <span>=</span>
+    {% endif %}
+    </div>
+    <div class="death box">
+      <b>Total Deaths:</b>
+      {{data['data'][0]['deaths']}}
+    </div>
+    <div class="deaths_daily box">
+      <b>Total Daily Deaths:</b>
+      {{data['data'][0]['deaths_daily']}}
+      {% if data['data'][0]['deaths_daily'] > data['data'][0]['deaths'] %}
+      <span>&#9650;</span>
+    {% elif data['data'][0]['deaths_daily'] < data['data'][0]['deaths'] %}
+    <span>&#9660;</span>
+    {% else %}
+    <span>=</span>
+    {% endif %}
+    </div>
+    <div class="Hospitalizations box">
+      <b>Hospitalizations:</b>
+      {{data['data'][0]['hospitalizations']}}
+    </div>
+    <div class="Hospitalizations_daily box">
+      <b>Hospitalizations Daily</b>
+      {{data['data'][0]['hospitalizations_daily']}}
+      {% if data['data'][0]['hospitalizations_daily'] > data['data'][0]['hospitalizations'] %}
+      <span>&#9650;</span>
+      {% elif data['data'][0]['hospitalizations_daily'] < data['data'][0]['hospitalizations'] %}
+      <span>&#9660;</span>
+      {% else %}
+    <span>=</span>
+    {% endif %}
+    </div>
+    <div class="icu box">
+      <b>ICU:</b>
+      {{data['data'][0]['icu']}}
+    </div>
+    <div class="icu_daily box">
+      <b>ICU Daily</b>
+      {{data['data'][0]['icu_daily']}}
+      {% if data['data'][0]['icu_daily'] > data['data'][0]['icu'] %}
+      <span>&#9650;</span>
+      {% elif data['data'][0]['icu_daily'] < data['data'][0]['icu'] %}
+      <span>&#9660;</span>
+      {% else %}
+    <span>=</span>
+    {% endif %}
+    </div>
+  </div>
+   
+</body>
+</html>

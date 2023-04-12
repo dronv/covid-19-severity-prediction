@@ -1,0 +1,82 @@
+*{
+        margin: 0;
+}
+.main{
+        background-image:  url("../covid-19-prediction/static/background.jpg") no-repeat right bottom ;
+}
+.navbar{
+        
+        background-color: #F49428;
+        height: 50px;
+        box-shadow: 4px 8px 6px -6px black;
+        position:relative;
+        z-index: 999999;
+        
+}
+.app-title{
+        color: #545555;
+        padding: 5px;
+        text-align: center;
+        font-weight:900;
+        box-shadow: 2px 5px 14px -1px rgba(0,0,0,0.74);
+        background-color: rgb(255, 255, 255);
+        height: 45px;
+        width: 150px
+}
+.covid-img{
+        width: 35px;
+        height: 35px;
+        mix-blend-mode: multiply;
+        padding-top: 2px;
+}
+.covid-virus-background{
+        z-index: -1;
+}
+form{
+        border-radius: 15px;
+        background: linear-gradient(
+                        to right bottom,
+                        rgba(255, 255, 255, 0.4),
+                        rgba(255, 255, 255, 0.1)
+        );
+        box-shadow: 4px 4px 5px #979797;
+        z-index: 2;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba( 255, 255, 255, 0.18 );
+        border-radius: 16px;
+        padding: 20px;
+        width: 600px;
+        margin-left: 150px;
+}
+input, select{
+        width: 100%;
+        font-weight: 200;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        cursor: pointer;
+}
+label{
+        font-weight: bolder;
+}
+button{
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  font-weight: 600;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.flex-container{
+        display: flex;
+        flex-direction: row;
+}
+h2{
+        color: white;
+}
